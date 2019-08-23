@@ -28,7 +28,7 @@ public class CPF_Maker {
             cpf[2][i] = (short)(cpf[0][i] * cpf[1][i]);
             somatoria+= cpf[2][i];
         }
-        // exemplo de  For each (for aprimorado)
+        // exemplo de For each (for aprimorado)
         for(short[] a:cpf){
             for( short elemento: a){
             System.out.printf(" %d",elemento);
@@ -39,7 +39,7 @@ public class CPF_Maker {
          System.out.println("Quociente: "+ (somatoria/11));
          System.out.println("Resto: "+ (somatoria%11));
          
-         // calculando o primeiro digito verificado xxx.xxx.xxx-?x
+         // calculando o primeiro dígito verificador xxx.xxx.xxx-?x
          if(somatoria%11<2){
              cpf[0][9]= 0;
          }else{
@@ -47,8 +47,8 @@ public class CPF_Maker {
          }
          System.out.println("Primeiro digito verificador: "+ cpf[0][9]);
          
-         // calculando o segundo digito verificado xxx.xxx.xxx-x?
-         somatoria =0; // reiniciando o somatória para segundo dígito 
+         // calculando o segundo dígito verificador xxx.xxx.xxx-x?
+         somatoria =0; // reiniciando a somatória para o segundo dígito verificador
          for(i=0;i<10;i++){
              cpf[1][i]= (short)(11-i);
              cpf[2][i] = (short)(cpf[0][i] * cpf[1][i]);
